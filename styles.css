@@ -136,6 +136,7 @@ body {
 
 .card p {
   margin-top: 0.75rem;
+  color: var(--grayish-blue);
 }
 
 .card img {
