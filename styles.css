@@ -34,6 +34,11 @@ body {
   width: 100%;
 }
 
+.container {
+  width: 87.5%;
+  margin: 0 auto;
+}
+
 .header-text {
   margin: 5rem auto 0 auto;
   padding: 0 0.5rem;
@@ -59,6 +64,7 @@ body {
 
 .feature-cards {
   display: grid;
+  gap: 2rem;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-template-areas:
@@ -68,7 +74,39 @@ body {
     ". k .";
   justify-items: center;
   margin: 3rem auto;
-  width: 1200px;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  position: relative;
+  width: 100%;
+  max-width: 30rem;
+  height: 19rem;
+  border-radius: 0.6rem;
+  padding: 2rem;
+  overflow: hidden;
+  box-shadow: 0 0.85rem 1rem var(--very-light-blue);
+}
+
+.card h2 {
+  color: var(--very-dark-blue);
+}
+
+.card p {
+  margin-top: 0.75rem;
+  color: var(--grayish-blue);
+}
+
+.card img {
+  position: absolute;
+  right: 3rem;
+  bottom: 3rem;
+  margin-top: 4rem;
+  width: 4.125rem;
+  margin-left: auto;
 }
 
 .supervisor {
@@ -85,7 +123,6 @@ body {
 
 .karma {
   grid-area: k;
-  margin-top: 0.875rem;
 }
 
 .supervisor::after,
@@ -117,34 +154,6 @@ body {
   background: var(--orange);
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  background: white;
-  position: relative;
-  width: 25rem;
-  height: 19rem;
-  border-radius: 0.6rem;
-  padding: 2rem;
-  overflow: hidden;
-  box-shadow: 0 0.85rem 1rem var(--very-light-blue);
-}
-
-.card h2 {
-  color: var(--very-dark-blue);
-}
-
-.card p {
-  margin-top: 0.75rem;
-  color: var(--grayish-blue);
-}
-
-.card img {
-  margin-top: 4rem;
-  width: 4.125rem;
-  margin-left: auto;
-}
-
 /* Attribution */
 .attribution {
   font-size: 11px;
@@ -161,21 +170,25 @@ body {
     grid-template-areas:
       "s t"
       "c k";
-    width: 775px;
+    width: 100%;
     gap: 25px;
   }
   .karma {
     margin-top: 0;
   }
+  .container {
+    width: 75%;
+  }
 }
 
 @media only screen and (max-width: 775px) {
   .header-text {
-    padding: 0 1.25rem;
-    width: 24rem;
+    padding: 0;
+    width: 100%;
+    max-width: 25rem;
   }
   .header-text h1 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
   .feature-cards {
     grid-template-columns: 1fr;
@@ -185,15 +198,20 @@ body {
       "t"
       "k"
       "c";
-    width: 24rem;
+    width: 100%;
   }
   .card {
     margin-top: 2rem;
     padding: 2rem;
-    width: 22rem;
+    width: 100%;
+    max-width: 400px;
     height: 17rem;
   }
   .card img {
-    margin-top: 2.5rem;
+    right: 2rem;
+    bottom: 2rem;
+  }
+  .container {
+    width: 87.5%;
   }
 }
